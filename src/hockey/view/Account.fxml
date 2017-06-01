@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hockey.controller.Account_controller">
+   <top>
+      <Label text="ACCOUNT" textFill="#e6e60a" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Showcard Gothic" size="48.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="900.0" spacing="8.0">
+               <children>
+                  <Separator prefWidth="200.0" />
+                  <Label text="ADD MATCH" textFill="RED">
+                     <font>
+                        <Font name="Showcard Gothic" size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0" />
+                  <HBox alignment="CENTER" prefHeight="49.0" prefWidth="797.0" spacing="10.0">
+                     <children>
+                        <Label text="B. EVENT ID :" textFill="#e6e60a">
+                           <font>
+                              <Font name="Showcard Gothic" size="17.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="f_id" prefHeight="40.0" prefWidth="50.0">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </TextField>
+                        <Label text="BET :" textFill="#e6e60a">
+                           <font>
+                              <Font name="Showcard Gothic" size="17.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="f_bet" prefHeight="40.0" prefWidth="50.0">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </TextField>
+                        <Label text="MONEY :" textFill="#e6e60a">
+                           <font>
+                              <Font name="Showcard Gothic" size="17.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="f_money" prefHeight="40.0" prefWidth="50.0">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </TextField>
+                        <Label text="EVENTUAL WIN :" textFill="#e6e60a">
+                           <font>
+                              <Font name="Showcard Gothic" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="f_even_win" text="0 €" textFill="#00e600">
+                           <font>
+                              <Font name="Showcard Gothic" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="18.0" prefWidth="739.0" spacing="25.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#eventual_win" prefWidth="120.0" style="-fx-background-color: yellow;" text="COUNT">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#add_to_account" prefWidth="120.0" style="-fx-background-color: yellow;" text="ADD">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <Label text="CHANGE MATCH" textFill="RED">
+                     <font>
+                        <Font name="Showcard Gothic" size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0" />
+                  <HBox alignment="CENTER" prefHeight="44.0" prefWidth="797.0" spacing="10.0">
+                     <children>
+                        <Label text="BET ID :" textFill="#e6e60a">
+                           <font>
+                              <Font name="Showcard Gothic" size="17.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="c_id" prefHeight="50.0" prefWidth="50.0">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </TextField>
+                        <RadioButton fx:id="c_w" mnemonicParsing="false" text="WIN" textFill="#e6e60a">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="c_l" mnemonicParsing="false" text="LOOSE" textFill="#e6e60a">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="c_c" mnemonicParsing="false" text="CANCELED" textFill="#e6e60a">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </RadioButton>
+                        <Button mnemonicParsing="false" onAction="#save" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: yellow;" text="SAVE">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#delete" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: yellow;" text="DELETE">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <Label text="STATISTIC OF BETS / BETTING EVENTS" textFill="RED">
+                     <font>
+                        <Font name="Showcard Gothic" size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0" />
+                  <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="445.0" prefWidth="739.0">
+                     <items>
+                        <TableView fx:id="table1" prefHeight="179.0" prefWidth="737.0">
+                          <columns>
+                            <TableColumn fx:id="a_id" prefWidth="21.0" style="-fx-alignment: CENTER;" text="Id" />
+                            <TableColumn fx:id="a_home_team" prefWidth="59.0" style="-fx-alignment: CENTER;" text="H. Team" />
+                              <TableColumn fx:id="a_hs" prefWidth="28.0" style="-fx-alignment: CENTER;" text="HS" />
+                              <TableColumn fx:id="a_gs" prefWidth="27.0" style="-fx-alignment: CENTER;" text="GS" />
+                              <TableColumn fx:id="a_n" prefWidth="41.0" style="-fx-alignment: CENTER;" text="N" />
+                              <TableColumn fx:id="a_guest_team" prefWidth="61.0" style="-fx-alignment: CENTER;" text="G.Team" />
+                              <TableColumn fx:id="a_bet" prefWidth="82.0" style="-fx-alignment: CENTER;" text="Bet" />
+                              <TableColumn fx:id="a_money_bet" minWidth="0.0" prefWidth="116.0" style="-fx-alignment: CENTER;" text="Money - bet" />
+                              <TableColumn fx:id="a_may_win" prefWidth="99.0" style="-fx-alignment: CENTER;" text="May win" />
+                              <TableColumn fx:id="a_result" minWidth="3.0" prefWidth="92.0" style="-fx-alignment: CENTER;" text="Result" />
+                              <TableColumn fx:id="a_date_of_bet" prefWidth="111.0" style="-fx-alignment: CENTER;" text="Date" />
+                          </columns>
+                        </TableView>
+                        <TableView fx:id="table2" prefHeight="200.0" prefWidth="200.0">
+                          <columns>
+                              <TableColumn fx:id="s_id" prefWidth="24.0" text="Id" />
+                            <TableColumn fx:id="s_home_team" prefWidth="248.0" text="Home Team" />
+                            <TableColumn fx:id="s_guest_team" minWidth="0.0" prefWidth="316.0" text="Guest Team" />
+                              <TableColumn fx:id="s_h_line" prefWidth="48.0" text="1" />
+                              <TableColumn fx:id="s_d_line" prefWidth="45.0" text="0" />
+                              <TableColumn fx:id="s_v_line" prefWidth="54.0" text="2" />
+                          </columns>
+                        </TableView>
+                     </items>
+                  </SplitPane>
+                  <Separator prefWidth="200.0" />
+               </children>
+               <padding>
+                  <Insets left="80.0" right="80.0" />
+               </padding>
+            </VBox>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <VBox alignment="TOP_CENTER" prefHeight="645.0" prefWidth="297.0" spacing="13.0">
+               <children>
+                  <Label text="Statictics" textFill="RED">
+                     <font>
+                        <Font name="Showcard Gothic" size="36.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0" />
+                  <HBox alignment="CENTER" prefHeight="22.0" prefWidth="257.0" spacing="20.0">
+                     <children>
+                        <Label text="Sum account :" textFill="#e6e60a">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="act_acc" textFill="LIME">
+                           <font>
+                              <Font name="Showcard Gothic" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="257.0" spacing="20.0">
+                     <children>
+                        <Label text="Benefit :" textFill="#e6e60a">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="benefit" textFill="LIME">
+                           <font>
+                              <Font name="Showcard Gothic" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <HBox alignment="CENTER" prefHeight="9.0" prefWidth="257.0" spacing="20.0">
+                     <children>
+                        <Label text="Success :" textFill="#e6e60a">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="success" textFill="LIME">
+                           <font>
+                              <Font name="Showcard Gothic" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <HBox alignment="CENTER" prefHeight="0.0" prefWidth="257.0" spacing="20.0">
+                     <children>
+                        <Label text="Matches win :" textFill="#e6e60a">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="games_win" textFill="LIME">
+                           <font>
+                              <Font name="Showcard Gothic" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <HBox alignment="CENTER" prefHeight="0.0" prefWidth="257.0" spacing="20.0">
+                     <children>
+                        <Label text="Matches loose :" textFill="#e6e60a">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="games_lost" textFill="LIME">
+                           <font>
+                              <Font name="Showcard Gothic" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <HBox alignment="CENTER" prefHeight="0.0" prefWidth="257.0" spacing="20.0">
+                     <children>
+                        <Label text="CANCELED :" textFill="#e6e60a">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="games_canc" textFill="LIME">
+                           <font>
+                              <Font name="Showcard Gothic" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <Button mnemonicParsing="false" onAction="#update_stats" style="-fx-background-color: yellow;" text="REFRESH">
+                     <font>
+                        <Font name="Showcard Gothic" size="15.0" />
+                     </font>
+                  </Button>
+                  <Separator prefWidth="200.0" />
+                  <Button mnemonicParsing="false" onAction="#show_betting_events" style="-fx-background-color: yellow;" text="SHOW BETTING EVENTS">
+                     <font>
+                        <Font name="Showcard Gothic" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#show_stats" style="-fx-background-color: yellow;" text="SHOW STATISTICS OF BETS">
+                     <font>
+                        <Font name="Showcard Gothic" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="20.0" right="20.0" top="30.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>

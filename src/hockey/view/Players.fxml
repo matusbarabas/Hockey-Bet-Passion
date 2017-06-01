@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="800.0" maxWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hockey.controller.Players_controller">
+   <top>
+      <Label text="PLAYERS" textFill="#e6e60a" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Showcard Gothic" size="48.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Label>
+   </top>
+   <left>
+      <VBox alignment="CENTER" prefHeight="744.0" prefWidth="363.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#trades" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: yellow;" text="TRADES">
+               <font>
+                  <Font name="Showcard Gothic" size="22.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#best_players" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: yellow;" text="Best players">
+               <font>
+                  <Font name="Showcard Gothic" size="22.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#best_forwards" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: yellow;" text="Best forwards">
+               <font>
+                  <Font name="Showcard Gothic" size="21.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#best_defence" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: yellow;" text="Best defence men">
+               <font>
+                  <Font name="Showcard Gothic" size="19.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#go_goalies" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: yellow;" text="GOALIES">
+               <font>
+                  <Font name="Showcard Gothic" size="22.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#most_goals" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: yellow;" text="Most goals">
+               <font>
+                  <Font name="Showcard Gothic" size="22.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#most_assist" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: yellow;" text="Most assistances">
+               <font>
+                  <Font name="Showcard Gothic" size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#go_trade" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: yellow;" text="Trade">
+               <font>
+                  <Font name="Showcard Gothic" size="22.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="25.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="128.0" prefWidth="697.0" style="-fx-background-color: black;">
+               <children>
+                  <ComboBox fx:id="teams" layoutX="188.0" layoutY="69.0" prefHeight="39.0" prefWidth="322.0" />
+                  <Label layoutX="226.0" layoutY="20.0" text="PLEASE SELECT TEAM" textFill="#e50b0b">
+                     <font>
+                        <Font name="Showcard Gothic" size="25.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="189.0" layoutY="48.0" prefHeight="11.0" prefWidth="321.0" />
+               </children>
+            </Pane>
+            <TableView fx:id="table" prefHeight="466.0" prefWidth="697.0">
+              <columns>
+                <TableColumn fx:id="name" prefWidth="204.0" style="-fx-alignment: CENTER;" text="Name" />
+                  <TableColumn fx:id="team" minWidth="0.0" prefWidth="106.0" style="-fx-alignment: CENTER;" text="Team" />
+                  <TableColumn fx:id="date_from" prefWidth="88.0" style="-fx-alignment: CENTER;" text="Date from" />
+                  <TableColumn fx:id="date_to" prefWidth="87.0" style="-fx-alignment: CENTER;" text="Date to" />
+                  <TableColumn fx:id="pos" prefWidth="85.0" style="-fx-alignment: CENTER;" text="Pos" />
+                  <TableColumn fx:id="goals" prefWidth="40.0" style="-fx-alignment: CENTER;" text="Goals" />
+                  <TableColumn fx:id="assist" prefWidth="41.0" style="-fx-alignment: CENTER;" text="Assist" />
+                  <TableColumn fx:id="points" minWidth="9.0" prefWidth="45.0" style="-fx-alignment: CENTER;" text="Points" />
+              </columns>
+            </TableView>
+            <Button mnemonicParsing="false" onAction="#show_players_table" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: yellow;" text="SHOW PLAYERS">
+               <font>
+                  <Font name="Showcard Gothic" size="22.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="20.0" right="120.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>

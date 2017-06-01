@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="300.0" prefWidth="300.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hockey.controller.Trade_controller">
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#make_trade" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: yellow;" text="TRADE" textFill="#141414">
+               <font>
+                  <Font name="Showcard Gothic" size="15.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#close_trade_window" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: yellow;" text="CANCEL" textFill="#141414">
+               <font>
+                  <Font name="Showcard Gothic" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+   <top>
+      <Label text="Trading players" textFill="#e6e60a" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Showcard Gothic" size="25.0" />
+         </font>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+      </Label>
+   </top>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <center>
+      <AnchorPane prefHeight="291.0" prefWidth="275.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" layoutX="31.0" layoutY="16.0" prefHeight="275.0" prefWidth="250.0" spacing="10.0">
+               <children>
+                  <Label prefHeight="0.0" prefWidth="209.0" text="All information about player" textFill="RED">
+                     <font>
+                        <Font name="Showcard Gothic" size="13.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0" />
+                  <GridPane alignment="CENTER" prefHeight="200.0" prefWidth="199.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="NAME" textFill="YELLOW">
+                           <font>
+                              <Font name="Showcard Gothic" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="t_name" GridPane.columnIndex="1" />
+                        <TextField fx:id="t_new_team" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="NEW TEAM" textFill="YELLOW" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Showcard Gothic" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="DATE" textFill="YELLOW" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Showcard Gothic" size="18.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="d_picker" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

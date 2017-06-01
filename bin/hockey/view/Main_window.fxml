@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="800.0" maxWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hockey.controller.Main_controller">
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button id="players" minHeight="50.0" mnemonicParsing="false" onAction="#go_players" prefWidth="140.0" stylesheets="@Main_window.css" text="%players">
+               <font>
+                  <Font name="Showcard Gothic" size="23.0" />
+               </font>
+            </Button>
+            <Button id="teams" minHeight="50.0" mnemonicParsing="false" onAction="#go_teams" prefWidth="140.0" stylesheets="@Main_window.css" text="%teams">
+               <font>
+                  <Font name="Showcard Gothic" size="23.0" />
+               </font>
+            </Button>
+            <Button id="home" minHeight="50.0" mnemonicParsing="false" onAction="#go_main" prefWidth="145.0" stylesheets="@Main_window.css" text="%home">
+               <font>
+                  <Font name="Showcard Gothic" size="23.0" />
+               </font>
+            </Button>
+            <Button id="matches" minHeight="50.0" mnemonicParsing="false" onAction="#go_matches" prefWidth="140.0" stylesheets="@Main_window.css" text="%matches">
+               <font>
+                  <Font name="Showcard Gothic" size="23.0" />
+               </font>
+            </Button>
+            <Button id="account" minHeight="50.0" mnemonicParsing="false" onAction="#go_account" prefWidth="145.0" stylesheets="@Main_window.css" text="%account">
+               <font>
+                  <Font name="Showcard Gothic" size="23.0" />
+               </font>
+            </Button>
+            <Button id="life" minHeight="50.0" mnemonicParsing="false" onAction="#go_life" prefWidth="145.0" stylesheets="@Main_window.css" text="%life">
+               <font>
+                  <Font name="Showcard Gothic" size="23.0" />
+               </font>
+            </Button>
+            <HBox alignment="CENTER" prefHeight="80.0" prefWidth="117.0" spacing="10.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="50.0" onMouseClicked="#go_slovencina">
+                     <image>
+                        <Image url="@../../../sk.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="50.0" onMouseClicked="#go_english">
+                     <image>
+                        <Image url="@../../../eng.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <BorderPane.margin>
+            <Insets left="30.0" />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+   <center>
+      <ImageView fitHeight="670.0" fitWidth="1200.0" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../../../hockey.jpg" />
+         </image>
+      </ImageView>
+   </center>
+   <top>
+      <VBox alignment="CENTER" prefHeight="61.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="%heading" textFill="#008cff">
+               <font>
+                  <Font name="Showcard Gothic" size="48.0" />
+               </font>
+            </Label>
+            <Separator prefWidth="200.0" />
+         </children>
+         <padding>
+            <Insets left="50.0" right="50.0" />
+         </padding>
+      </VBox>
+   </top>
+</BorderPane>

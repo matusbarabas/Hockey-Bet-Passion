@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="900.0" maxWidth="1300.0" prefHeight="900.0" prefWidth="1300.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hockey.controller.Live_controller">
+   <top>
+      <Label text="LIVE GAME" textFill="#e6e60a" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Showcard Gothic" size="48.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Label>
+   </top>
+   <center>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="590.0">
+               <children>
+                  <GridPane alignment="CENTER" prefHeight="443.0" prefWidth="590.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="5.0" prefWidth="5.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="HOME" textFill="RED">
+                           <font>
+                              <Font name="Showcard Gothic" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="period" textFill="RED" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Showcard Gothic" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="TOP_LEFT" text="VISITOR" textFill="RED" GridPane.columnIndex="2">
+                           <font>
+                              <Font name="Showcard Gothic" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="h" textFill="#e6e60a" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Showcard Gothic" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="v" textFill="#e6e60a" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Showcard Gothic" size="20.0" />
+                           </font>
+                        </Label>
+                        <Separator prefWidth="200.0" GridPane.rowIndex="1" />
+                        <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Separator prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <Label fx:id="h_g" textFill="#e6e60a">
+                                 <font>
+                                    <Font name="Showcard Gothic" size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label text=":" textFill="#e6e60a">
+                                 <font>
+                                    <Font name="Showcard Gothic" size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="v_g" textFill="#e6e60a">
+                                 <font>
+                                    <Font name="Showcard Gothic" size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">
+                           <children>
+                              <Label text="SHOTS: " textFill="#e6e60a">
+                                 <font>
+                                    <Font name="Showcard Gothic" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="h_s" textFill="#e6e60a">
+                                 <font>
+                                    <Font name="Showcard Gothic" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                           <children>
+                              <Label text="SHOTS: " textFill="#e6e60a">
+                                 <font>
+                                    <Font name="Showcard Gothic" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="v_s" textFill="#e6e60a">
+                                 <font>
+                                    <Font name="Showcard Gothic" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
+                           <children>
+                              <Label text="PM:" textFill="#e6e60a">
+                                 <font>
+                                    <Font name="Showcard Gothic" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="h_pm" textFill="#e6e60a">
+                                 <font>
+                                    <Font name="Showcard Gothic" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                           <children>
+                              <Label text="PM:" textFill="#e6e60a">
+                                 <font>
+                                    <Font name="Showcard Gothic" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="v_pm" textFill="#e6e60a">
+                                 <font>
+                                    <Font name="Showcard Gothic" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="4">
+                           <children>
+                              <Label text="Goals and assist:" textFill="#e6e60a">
+                                 <font>
+                                    <Font name="Showcard Gothic" size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextArea fx:id="home_goals_text" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                           <children>
+                              <Label text="Goals and assist:" textFill="#e6e60a">
+                                 <font>
+                                    <Font name="Showcard Gothic" size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextArea fx:id="vis_goals_text" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
+                           </children>
+                        </VBox>
+                        <Separator prefWidth="200.0" GridPane.rowIndex="3" />
+                        <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Separator prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Label text="TEXT ONLINE" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <TableView fx:id="text_table" fixedCellSize="50.0" prefHeight="482.0" prefWidth="550.0">
+                    <columns>
+                      <TableColumn fx:id="text_column" editable="false" prefWidth="549.0" resizable="false" sortable="false" text="Text" />
+                    </columns>
+                  </TableView>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" />
+               </padding>
+            </VBox>
+            <Separator orientation="VERTICAL" prefHeight="200.0" prefWidth="20.0" />
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="590.0" spacing="15.0">
+               <children>
+                  <Separator prefWidth="200.0" />
+                  <GridPane prefHeight="58.0" prefWidth="570.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="HOME TEAM" textFill="RED">
+                           <font>
+                              <Font name="Showcard Gothic" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label text="VISITOR TEAM" textFill="RED" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Showcard Gothic" size="20.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="home_team" prefWidth="150.0" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="visitor_team" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                  <Button fx:id="b_s_t" mnemonicParsing="false" onAction="#select_team" style="-fx-background-color: yellow;" text="SELECT TEAM">
+                     <font>
+                        <Font name="Showcard Gothic" size="20.0" />
+                     </font>
+                  </Button>
+                  <HBox alignment="CENTER" prefHeight="37.0" prefWidth="590.0" spacing="5.0">
+                     <children>
+                        <CheckBox fx:id="first" mnemonicParsing="false" onAction="#set_period" text="1. PERIOD" textFill="#e6e60a">
+                           <font>
+                              <Font name="Showcard Gothic" size="20.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="second" mnemonicParsing="false" onAction="#set_period" text="2. PERIOD" textFill="#e6e60a">
+                           <font>
+                              <Font name="Showcard Gothic" size="20.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="third" mnemonicParsing="false" onAction="#set_period" text="3. PERIOD" textFill="#e6e60a">
+                           <font>
+                              <Font name="Showcard Gothic" size="20.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="ot" mnemonicParsing="false" onAction="#set_period" text="OT" textFill="#e6e60a">
+                           <font>
+                              <Font name="Showcard Gothic" size="20.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="so" mnemonicParsing="false" onAction="#set_period" text="SO" textFill="#e6e60a">
+                           <font>
+                              <Font name="Showcard Gothic" size="20.0" />
+                           </font>
+                        </CheckBox>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <HBox alignment="CENTER" prefHeight="24.0" prefWidth="590.0" spacing="10.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#hg_plus" style="-fx-background-color: yellow;" text="HG +">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#hg_minus" style="-fx-background-color: yellow;" text="HG -">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Button>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" />
+                        <Button mnemonicParsing="false" onAction="#vg_plus" style="-fx-background-color: yellow;" text="VG +">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#vg_minus" style="-fx-background-color: yellow;" text="VG -">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="9.0" prefWidth="590.0" spacing="10.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#hs_plus" style="-fx-background-color: yellow;" text="HS +">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#hs_minus" style="-fx-background-color: yellow;" text="HS -">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Button>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" />
+                        <Button mnemonicParsing="false" onAction="#vs_plus" style="-fx-background-color: yellow;" text="VS +">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#vs_minus" style="-fx-background-color: yellow;" text="VS -">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <GridPane prefHeight="66.0" prefWidth="570.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <RadioButton fx:id="five_min" mnemonicParsing="false" text="5 MIN" textFill="#e6e60a" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="two_min" mnemonicParsing="false" text="2 MIN" textFill="#e6e60a">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="ten_min" mnemonicParsing="false" text="10 MIN" textFill="#e6e60a" GridPane.columnIndex="2">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </RadioButton>
+                        <Button mnemonicParsing="false" onAction="#pm_home" style="-fx-background-color: yellow;" text="ADD HOME" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#pm_visitor" style="-fx-background-color: yellow;" text="ADD VISITOR" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </GridPane>
+                  <Separator prefWidth="200.0" />
+                  <GridPane prefHeight="155.0" prefWidth="570.0">
+                     <children>
+                        <Label prefHeight="11.0" prefWidth="147.0" text="PLAYERS HOME" textFill="RED">
+                           <font>
+                              <Font name="Showcard Gothic" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label text="PLAYERS VISITOR" textFill="RED" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Showcard Gothic" size="20.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.rowIndex="1">
+                           <children>
+                              <Label text="GOAL      " textFill="#e6e60a">
+                                 <font>
+                                    <Font name="Showcard Gothic" size="15.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="p_home" prefWidth="150.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.rowIndex="2">
+                           <children>
+                              <Label text="ASSIST 1" textFill="#e6e60a">
+                                 <font>
+                                    <Font name="Showcard Gothic" size="15.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="p_home1" prefWidth="150.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.rowIndex="3">
+                           <children>
+                              <Label text="ASSIST 2" textFill="#e6e60a">
+                                 <font>
+                                    <Font name="Showcard Gothic" size="15.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="p_home2" prefWidth="150.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <children>
+                              <Label text="ASSIST 2" textFill="#e6e60a">
+                                 <font>
+                                    <Font name="Showcard Gothic" size="15.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="p_vis2" prefWidth="150.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <Label text="ASSIST 1" textFill="#e6e60a">
+                                 <font>
+                                    <Font name="Showcard Gothic" size="15.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="p_vis1" prefWidth="150.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <Label text="GOAL      " textFill="#e6e60a">
+                                 <font>
+                                    <Font name="Showcard Gothic" size="15.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="p_vis" prefWidth="150.0" />
+                           </children>
+                        </HBox>
+                        <Button mnemonicParsing="false" onAction="#home_goal" style="-fx-background-color: yellow;" text="SAVE" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#vis_goal" style="-fx-background-color: yellow;" text="SAVE" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+                  <Separator prefWidth="200.0" />
+                  <TextArea fx:id="write_text" maxWidth="570.0" prefHeight="187.0" prefWidth="570.0" wrapText="true" />
+                  <HBox alignment="CENTER" prefHeight="47.0" prefWidth="570.0" spacing="50.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#text_to_table" style="-fx-background-color: yellow;" text="ADD">
+                           <font>
+                              <Font name="Showcard Gothic" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#end" style="-fx-background-color: yellow;" text="END OF GAME">
+                           <font>
+                              <Font name="Showcard Gothic" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#save_game" style="-fx-background-color: yellow;" text="SAVE GAME">
+                           <font>
+                              <Font name="Showcard Gothic" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </padding></VBox>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>

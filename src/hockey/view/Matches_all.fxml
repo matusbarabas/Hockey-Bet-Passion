@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hockey.controller.All_matches_controller">
+   <top>
+      <Label text="ALL MATCHES" textFill="#e6e60a" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Showcard Gothic" size="30.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <VBox alignment="CENTER" prefHeight="565.0" prefWidth="733.0" spacing="15.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="19.0" prefWidth="800.0" spacing="30.0">
+               <children>
+                  <Label text="SELECT TEAM:" textFill="RED">
+                     <font>
+                        <Font name="Showcard Gothic" size="25.0" />
+                     </font></Label>
+                  <ComboBox fx:id="teams" prefHeight="36.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <Label text="TABLE OF ALL MATCHES" textFill="RED">
+               <font>
+                  <Font name="Showcard Gothic" size="25.0" />
+               </font></Label>
+            <Separator prefWidth="200.0" />
+            <TableView fx:id="table" prefHeight="324.0" prefWidth="800.0">
+              <columns>
+                  <TableColumn fx:id="id" prefWidth="32.0" text="Id" />
+                <TableColumn fx:id="home_team" prefWidth="227.0" style="-fx-alignment: CENTER;" text="Home" />
+                <TableColumn fx:id="guest_team" minWidth="0.0" prefWidth="254.0" style="-fx-alignment: CENTER;" text="Guest" />
+                  <TableColumn fx:id="home_score" prefWidth="36.0" style="-fx-alignment: CENTER;" text="HS" />
+                  <TableColumn fx:id="guest_score" prefWidth="39.0" style="-fx-alignment: CENTER;" text="GS" />
+                  <TableColumn fx:id="ot_so" prefWidth="53.0" style="-fx-alignment: CENTER;" text="OT / SO" />
+                  <TableColumn fx:id="datum" prefWidth="118.0" style="-fx-alignment: CENTER;" text="Date" />
+              </columns>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TableView>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER" prefHeight="53.0" prefWidth="800.0" spacing="50.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#show_games" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: yellow;" text="SHOW">
+                     <font>
+                        <Font name="Showcard Gothic" size="23.0" />
+                     </font></Button>
+                  <Button mnemonicParsing="false" onAction="#close_all_matches" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: yellow;" text="CANCEL">
+                     <font>
+                        <Font name="Showcard Gothic" size="23.0" />
+                     </font></Button>
+               </children>
+            </HBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+      </VBox>
+   </center>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</BorderPane>

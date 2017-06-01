@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="800.0" maxWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hockey.controller.Teams_controller">
+   <top>
+      <Label text="TEAMS" textFill="#e6e60a" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Showcard Gothic" size="48.0" />
+         </font>
+      </Label>
+   </top>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="600.0" spacing="20.0">
+               <children>
+                  <Separator prefWidth="200.0" />
+                  <Label text="TABLE OF ALL TEAMS" textFill="RED">
+                     <font>
+                        <Font name="Showcard Gothic" size="25.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0" />
+                  <TableView fx:id="table" prefHeight="544.0" prefWidth="520.0">
+                    <columns>
+                      <TableColumn fx:id="name" prefWidth="277.0" style="-fx-alignment: CENTER;" text="Name" />
+                      <TableColumn fx:id="conference" minWidth="0.0" prefWidth="114.0" style="-fx-alignment: CENTER;" text="Conference" />
+                        <TableColumn fx:id="devision" prefWidth="128.0" style="-fx-alignment: CENTER;" text="Devision" />
+                    </columns>
+                  </TableView>
+               </children>
+               <padding>
+                  <Insets left="40.0" right="40.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="744.0" prefWidth="527.0" spacing="20.0">
+               <children>
+                  <Separator prefWidth="200.0" />
+                  <Label prefHeight="29.0" prefWidth="350.0" text="ADD OR DELETE TEAM NHL" textFill="RED">
+                     <font>
+                        <Font name="Showcard Gothic" size="25.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0" />
+                  <GridPane fx:id="aaa" alignment="CENTER" prefHeight="226.0" prefWidth="447.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="TEAM NAME" textFill="#e6e60a">
+                           <font>
+                              <Font name="Showcard Gothic" size="30.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="team_name" GridPane.columnIndex="1" />
+                        <Label text="CONFERENCE" textFill="#e6e60a" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Showcard Gothic" size="30.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="team_conference" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="DEVISION" textFill="#e6e60a" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Showcard Gothic" size="30.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="team_devision" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     </children>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                  </GridPane>
+                  <Label fx:id="info" prefHeight="0.0" prefWidth="92.0" textFill="#00fa00">
+                     <font>
+                        <Font name="Showcard Gothic" size="12.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="41.0" prefWidth="447.0" spacing="20.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#add_team" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: yellow;" text="ADD">
+                           <font>
+                              <Font name="Showcard Gothic" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <Button mnemonicParsing="false" onAction="#show" style="-fx-background-color: yellow;" text="SHOW TEAMS">
+                     <font>
+                        <Font name="Showcard Gothic" size="25.0" />
+                     </font>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="40.0" right="40.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>

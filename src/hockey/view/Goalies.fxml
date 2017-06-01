@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: black;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="hockey.controller.Goalies_controller">
+   <top>
+      <Label text="GOALIES STATISTICS" textFill="#e6e60a" BorderPane.alignment="CENTER">
+         <opaqueInsets>
+            <Insets top="20.0" />
+         </opaqueInsets>
+         <font>
+            <Font name="Showcard Gothic" size="30.0" />
+         </font>
+      </Label>
+   </top>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <padding>
+      <Insets right="10.0" />
+   </padding>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="565.0" prefWidth="184.0" spacing="10.0">
+               <children>
+                  <Label text="Choose function" textFill="RED">
+                     <font>
+                        <Font name="Showcard Gothic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0" />
+                  <Label text="Select team" textFill="#00e600">
+                     <font>
+                        <Font name="Showcard Gothic" size="16.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="teams" prefHeight="20.0" prefWidth="155.0" />
+                  <CheckBox fx:id="best_goalies" mnemonicParsing="false" text="BEST GOALIES" textFill="#00e600">
+                     <font>
+                        <Font name="Showcard Gothic" size="15.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="most_shots" mnemonicParsing="false" text="MOST SHOTS" textFill="#00e600">
+                     <font>
+                        <Font name="Showcard Gothic" size="15.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="most_wins" mnemonicParsing="false" text="MOST WINS" textFill="#00e600">
+                     <font>
+                        <Font name="Showcard Gothic" size="15.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="average_age" mnemonicParsing="false" text="AVERAGE AGE" textFill="#00e600">
+                     <font>
+                        <Font name="Showcard Gothic" size="15.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="average_shots" mnemonicParsing="false" text="AVERAGE SHOTS" textFill="#00e600">
+                     <font>
+                        <Font name="Showcard Gothic" size="15.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="average_saves" mnemonicParsing="false" text="AVERAGE SAVES" textFill="#00e600">
+                     <font>
+                        <Font name="Showcard Gothic" size="15.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="average_pm" mnemonicParsing="false" text="AVERAGE PM" textFill="#00e600">
+                     <font>
+                        <Font name="Showcard Gothic" size="15.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="sum_shots" mnemonicParsing="false" text="SUM SHOTS" textFill="#00e600">
+                     <font>
+                        <Font name="Showcard Gothic" size="15.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="sum_saves" mnemonicParsing="false" text="SUM SAVES" textFill="#00e600">
+                     <font>
+                        <Font name="Showcard Gothic" size="15.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="sum_pm" mnemonicParsing="false" text="SUM PM" textFill="#00e600">
+                     <font>
+                        <Font name="Showcard Gothic" size="15.0" />
+                     </font>
+                  </CheckBox>
+                  <Separator prefWidth="200.0" />
+                  <Separator prefWidth="200.0" />
+                  <Label text="RESULT" textFill="RED">
+                     <font>
+                        <Font name="Showcard Gothic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0" />
+                  <Label fx:id="text" textFill="#e6e60a">
+                     <font>
+                        <Font name="Showcard Gothic" size="30.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0" />
+                  <Separator prefWidth="200.0" />
+               </children>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </VBox>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <VBox alignment="CENTER" prefHeight="565.0" prefWidth="806.0" spacing="15.0">
+               <children>
+                  <Label text="TABLE OF ALL GOALIES" textFill="RED">
+                     <font>
+                        <Font name="Showcard Gothic" size="20.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0" />
+                  <TableView fx:id="table" prefHeight="398.0" prefWidth="826.0">
+                    <columns>
+                      <TableColumn fx:id="g_name" prefWidth="172.0" text="Name" />
+                      <TableColumn fx:id="g_age" minWidth="0.0" prefWidth="46.0" text="Age" />
+                        <TableColumn fx:id="g_team" minWidth="0.0" prefWidth="65.0" text="Team" />
+                        <TableColumn fx:id="g_games" prefWidth="50.0" text="Games" />
+                        <TableColumn fx:id="g_w" prefWidth="54.0" text="Wins" />
+                        <TableColumn fx:id="g_l" prefWidth="44.0" text="Lost" />
+                        <TableColumn fx:id="g_ga" prefWidth="65.0" text="Goals ag." />
+                        <TableColumn fx:id="g_shots" prefWidth="42.0" text="Shots" />
+                        <TableColumn fx:id="g_saves" prefWidth="40.0" text="Saves" />
+                        <TableColumn fx:id="g_saves_p" prefWidth="69.0" text="Saves perc." />
+                        <TableColumn fx:id="g_shutout" prefWidth="56.0" text="Shutouts" />
+                        <TableColumn fx:id="g_goals" minWidth="8.0" prefWidth="21.0" text="G" />
+                        <TableColumn fx:id="g_assist" prefWidth="23.0" text="A" />
+                        <TableColumn fx:id="g_points" prefWidth="22.0" text="P" />
+                        <TableColumn fx:id="g_pm" prefWidth="28.0" text="PM" />
+                    </columns>
+                  </TableView>
+                  <Separator prefWidth="200.0" />
+                  <HBox alignment="CENTER" prefHeight="28.0" prefWidth="798.0" spacing="10.0">
+                     <children>
+                        <Label text="NAME" textFill="RED">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="m_name" prefHeight="25.0" prefWidth="101.0" />
+                        <Label text="AGE" textFill="RED">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="m_age" prefHeight="25.0" prefWidth="36.0" />
+                        <Label text="TEAM" textFill="RED">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="m_team" prefHeight="25.0" prefWidth="60.0" />
+                        <Button mnemonicParsing="false" onAction="#delete_goalie" style="-fx-background-color: yellow;" text="DELETE">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#show_goalies" style="-fx-background-color: yellow;" text="SHOW">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#close_goalies_window" style="-fx-background-color: yellow;" text="CANCEL">
+                           <font>
+                              <Font name="Showcard Gothic" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>

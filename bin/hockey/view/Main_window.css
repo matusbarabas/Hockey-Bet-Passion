@@ -1,0 +1,47 @@
+#home{
+	-fx-background-color: #088cff;
+}#home:hover{
+	-fx-background-color: #00BFFF;
+}#home:pressed{
+	-fx-background-color: #4682B4;
+}
+
+#account{
+	-fx-background-color: #088cff;
+}#account:hover{
+	-fx-background-color: #00BFFF;
+}#account:pressed{
+	-fx-background-color: #4682B4;
+}
+
+#players{
+	-fx-background-color: #088cff;
+}#players:hover{
+	-fx-background-color: #00BFFF;
+}#players:pressed{
+	-fx-background-color: #4682B4;
+}
+
+#teams{
+	-fx-background-color: #088cff;
+}#teams:hover{
+	-fx-background-color: #00BFFF;
+}#teams:pressed{
+	-fx-background-color: #4682B4;
+}
+
+#matches{
+	-fx-background-color: #088cff;
+}#matches:hover{
+	-fx-background-color: #00BFFF;
+}#matches:pressed{
+	-fx-background-color: #4682B4;
+}
+
+#life{
+	-fx-background-color: #088cff;
+}#life:hover{
+	-fx-background-color: #00BFFF;
+}#life:pressed{
+	-fx-background-color: #4682B4;
+}
